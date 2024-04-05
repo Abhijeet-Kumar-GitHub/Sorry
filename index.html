@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sorry Unnati</title>
+  <style>
+    body, iframe {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      border: none; 
+      width: 100%; 
+      height: 100vh;
+    }
+    #music-icon {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="main-content" src="/firstPage/index.html"></iframe>
+  <img id="music-icon" src="no-music.png" alt="Music Icon">
+  <audio id="audio-player" src="Chalo Jaane Do.mp3"></audio>
+  <!-- <script src="song.js"></script> -->
+  <script>
+    var audioPlayer = document.getElementById('audio-player');
+    var musicIcon = document.getElementById('music-icon');
+  
+    musicIcon.addEventListener('click', function() {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        musicIcon.src = "music.png";
+      } else {
+        audioPlayer.pause();
+        musicIcon.src = "no-music.png";
+      }
+    });
+  </script>
+</body>
+</html>
